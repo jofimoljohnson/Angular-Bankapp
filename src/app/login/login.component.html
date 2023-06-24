@@ -1,24 +1,26 @@
-
-<div><h1 class="text-white text-center">{{aim}}</h1></div>
+<div>
+    <h1 class="text-white text-center">{{aim}}</h1>
+</div>
 
 
 <div class="container mt-5 w-25  p-3 border  rounded-5" style="background: rgba(3, 77, 13, 0.5);">
     <h1 class="text-center text-white">LOGIN PAGE</h1>
     <div class="mt-3">
-        <input type="text" [placeholder]="acnt" (change)="acnoChange($event)" class="form-control" id="acnum">
+        <input type="text" [placeholder]="acnt" #acno class="form-control" id="acnum">
 
     </div>
     <div class="mt-3">
-        <input type="password" [placeholder]="pswrd" (change)="passwordChange($event)" class="form-control" id="psw">
+        <input type="password" [placeholder]="pswrd" #psw class="form-control" id="psw">
 
     </div>
     <div class="mt-3 text-center">
-        <button type="button" (click)="login()" class="btn btn-info" style="border-radius: 30px;">LOGIN</button>
+        <button type="button" (click)="login(acno,psw)" class="btn btn-info" style="border-radius: 30px;">LOGIN</button>
 
     </div>
     <div class="mt-3">
-        <p class="text-center text-white">new user? <a href="" style="font-size: 20px; color: aqua; text-decoration: none;">Register</a>
-</p>
+        <p class="text-center text-white">new user? <a href=""
+                style="font-size: 20px; color: aqua; text-decoration: none;">Register</a>
+        </p>
 
     </div>
 </div>
