@@ -1,0 +1,63 @@
+
+<div class="text-center">
+    <h1 class="text-white">Welcome {{user}}!!</h1>
+    
+</div>
+<div class="mt-4 p-3">
+    <a class="text-white " style="font-size: 20px;" routerLink="/transactions">View transaction history</a>
+
+</div>
+
+<div class="container mt-5 w-25  p-3 border  rounded-5" style="background: rgba(3, 77, 13, 0.5);">
+    <h1 class="text-center text-white">DEPOSIT </h1>
+
+    <form (ngSubmit)="deposit()" >
+        <div class="mt-3">
+            <input name="acnumber" type="text" placeholder="Enter acnumber" [(ngModel)]="acnum" class="form-control"
+                id="acno">
+
+        </div>
+        <div class="mt-3">
+            <input name="password" type="text" placeholder="Enter password" [(ngModel)]="pswrd" class="form-control" id="psw">
+
+        </div>
+        <div class="mt-3">
+            <input name="amount" type="amount" placeholder=" amount to deposit" [(ngModel)]="amnt" class="form-control"
+                id="amt">
+
+        </div>
+        <div class="mt-3 text-center">
+            <button type="submit" class="btn btn-info" style="border-radius: 30px;">DEPOSIT</button>
+
+        </div>
+    </form>
+
+</div>
+
+
+
+<div class="container mt-5 w-25  p-3 border  rounded-5" style="background: rgba(3, 77, 13, 0.5);">
+    <h1 class="text-center text-white">WITHDRAW </h1>
+
+    <form (ngSubmit)="withdraw()" >
+        <div class="mt-3">
+            <input name="acnumber1" type="text" placeholder="Enter acnumber" [(ngModel)]="acnum1" class="form-control"
+                id="acno1">
+
+        </div>
+        <div class="mt-3">
+            <input name="password1" type="text" placeholder="Enter password" [(ngModel)]="pswrd1" class="form-control" id="psw1">
+
+        </div>
+        <div class="mt-3">
+            <input name="amount1" type="amount" placeholder=" amount to withdraw" [(ngModel)]="amnt1" class="form-control"
+                id="amnt1">
+
+        </div>
+        <div class="mt-3 text-center">
+            <button type="submit" class="btn btn-info" style="border-radius: 30px;">WITHDRAW</button>
+
+        </div>
+    </form>
+
+</div>
