@@ -5,15 +5,19 @@
 
 <div class="container mt-5 w-25  p-3 border  rounded-5" style="background: rgba(3, 77, 13, 0.5);">
     <h1 class="text-center text-white">LOGIN PAGE</h1>
-   <form (ngSubmit)="login()">
+   <form (ngSubmit)="login()" [formGroup]=" loginForm">
         <div class="mt-3">
-            <input name="acnum" type="text" [placeholder]="acnt" [(ngModel)]="acno"  class="form-control" id="acnum">
+            <input name="acnum" type="text" [placeholder]="acnt" formControlName="acno"  class="form-control" id="acnum">
     
         </div>
+        <div *ngIf="this.loginForm.get('acno')?.errors&&this.loginForm.get('acno')?.touched" class="text-danger" style="font-size: 20px;"><p>Invalid acno</p></div>
+
         <div class="mt-3">
-            <input name="psw" type="password" [placeholder]="pswrd" [(ngModel)]="psw"  class="form-control" id="psw">
+            <input name="psw" type="password" [placeholder]="pswrd" formControlName="psw"  class="form-control" id="psw">
     
         </div>
+        <div *ngIf="this.loginForm.get('psw')?.errors&&this.loginForm.get('psw')?.touched" class="text-danger" style="font-size: 20px;"><p>Invalid Password</p></div>
+
         <div class="mt-3 text-center">
             <button type="submit"  class="btn btn-info" style="border-radius: 30px;">LOGIN</button>
     

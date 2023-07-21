@@ -3,3 +3,6 @@ body{
     background-image: url('./assets//bankimg.jpg');
     background-size: cover;
 }
+.style1{
+    opacity: 0;
+}

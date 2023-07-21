@@ -11,11 +11,16 @@ acno:any
 transactions:any;
   constructor(private ds:DataService) { 
 
-    this.acno= this.ds.currentAcno
-   this.transactions= this.ds.getTransaction(this.acno)
-   console.log(this.transactions);
-   
+    this.acno= JSON.parse(localStorage.getItem('currentAcno') || '');
+   this.ds.getTransaction(this.acno).subscribe((result: any) => {
+    this.transactions=result.transaction
+  },
+  result=>{
+    alert(result.error.message)
   }
+  );
+}
+
 
   ngOnInit(): void {
   }
